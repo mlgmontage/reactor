@@ -1,13 +1,14 @@
 import React from "react";
 import Message from "./components/Message";
+import Salutation from "./components/salutation";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
       <Message name="Jane" />
       <Message name="James" />
       <Message name="Hikaru" />
+      <Salutation lastname="Hikaru" />
     </div>
   );
 }
