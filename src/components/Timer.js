@@ -3,7 +3,7 @@ import React from "react";
 class Timer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { second: 0 };
+    this.state = { second: 0, minute: 0 };
   }
 
   tick() {
@@ -12,16 +12,29 @@ class Timer extends React.Component {
     }));
   }
 
+  minuteTick() {
+    this.setState((state) => ({
+      minute: state.minute + 1,
+    }));
+  }
+
   componentDidMount() {
     this.interval = setInterval(() => this.tick(), 1000);
+    this.minute_interval = setInterval(() => this.minuteTick(), 1000 * 60);
   }
 
   componentWillUnmount() {
     clearInterval(this.interval);
+    clearInterval(this.minute_interval);
   }
 
   render() {
-    return <h2>{this.state.second}</h2>;
+    return (
+      <div>
+        <h3>Seconds: {this.state.second}</h3>
+        <h3>Minutes: {this.state.minute}</h3>
+      </div>
+    );
   }
 }
 
