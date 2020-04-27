@@ -6,9 +6,8 @@ class Names extends React.Component {
   render() {
     return (
       <div>
-        <h4>names</h4>
+        <h3>names</h3>
         <ul>
-          <Name name="Hikaru" />
           {list.data.map((name) => (
             <Name name={name.name} />
           ))}
