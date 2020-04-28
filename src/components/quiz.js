@@ -24,6 +24,14 @@ class Quiz extends React.Component {
       <div>
         <h3>Quiz app</h3>
         <button onClick={this.handleClick}>display</button>
+        <ul>
+          {this.state.results.map((question) => (
+            <li
+              key={question.question}
+              dangerouslySetInnerHTML={{ __html: question.question }}
+            ></li>
+          ))}
+        </ul>
       </div>
     );
   }
