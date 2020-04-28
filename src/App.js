@@ -1,9 +1,10 @@
 import React from "react";
+import Count from "./components/count";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <Count />
     </div>
   );
 }
