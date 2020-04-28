@@ -1,9 +1,10 @@
 import React from "react";
+import Converter from "./components/converter";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <Converter />
     </div>
   );
 }
