@@ -25,16 +25,13 @@ class Quiz extends React.Component {
         <h3>Quiz app</h3>
         <button onClick={this.handleClick}>display</button>
         <ul>
-          {this.state.results.map((question) => (
-            <div>
-              <li
-                key={question.question}
-                dangerouslySetInnerHTML={{ __html: question.question }}
-              ></li>
+          {this.state.results.map((question, index) => (
+            <div key={index}>
+              <li dangerouslySetInnerHTML={{ __html: question.question }}></li>
               <ul>
-                <li key={question.correct_answer}>{question.correct_answer}</li>
-                {question.incorrect_answers.map((answer) => (
-                  <li key={answer}>{answer}</li>
+                <li>{question.correct_answer}</li>
+                {question.incorrect_answers.map((answer, index) => (
+                  <li key={index}>{answer}</li>
                 ))}
               </ul>
             </div>
