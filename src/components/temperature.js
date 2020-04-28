@@ -1,4 +1,5 @@
 import React from "react";
+import Agregate from "./agregate";
 
 class Temperature extends React.Component {
   constructor(props) {
@@ -30,6 +31,7 @@ class Temperature extends React.Component {
           <button onClick={this.increment}>up</button>
           <button onClick={this.decrement}>down</button>
         </div>
+        <Agregate degree={this.state.degree} />
       </div>
     );
   }
