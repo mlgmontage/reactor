@@ -21,6 +21,8 @@ class Todo extends React.Component {
         todoname: this.state.todoname,
         description: this.state.description,
       }),
+      todoname: "",
+      description: "",
     }));
   }
 
@@ -36,11 +38,11 @@ class Todo extends React.Component {
             name="todoname"
           ></input>
           <br></br>
-          <textarea
+          <input
             value={this.state.description}
             onChange={this.handleInput}
             name="description"
-          ></textarea>
+          ></input>
           <br></br>
           <button onClick={this.handleSubmit}>
             Add #{this.state.items.length + 1}
